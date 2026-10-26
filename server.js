@@ -31,13 +31,13 @@ app.use('/api/feedback', feedbackRoutes);
 
 // 404 middleware: no route matched
 app.use((req, res) => {
-  res.status(404).json({ message: 'Route not found' });
+  res.status(404).json({ error: 'Route not found' });
 });
 
-// 500 middleware: error handler
+// Error middleware: bad JSON body gives 400, anything else gives 500
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ message: 'Something went wrong' });
+  res.status(err.status || 500).json({ error: err.message });
 });
 
 // Create the SQLite tables if they do not exist

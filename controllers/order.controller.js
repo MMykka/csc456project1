@@ -4,6 +4,7 @@ const User = require('../models/user.model');
 // CREATE (the user must exist first)
 exports.createOrder = async (req, res) => {
   try {
+    if (!req.body.user) return res.status(400).json({ error: 'User id is required' });
     const user = await User.findById(req.body.user);
     if (!user) return res.status(404).json({ error: 'User not found' });
     const order = await Order.create(req.body);

@@ -18,7 +18,7 @@ Client → server.js → routes/ → controllers/ → models/ → database → `
 - Only dependencies: express, mongoose, sequelize, sqlite3, cors, nodemon (dev).
 - Controllers: `exports.fn = async (req, res) => { try { ... } catch (err) { res.status(..).json({ error: err.message }) } }`
 - Comments above each function: `// CREATE`, `// READ ALL`, `// READ ONE`, `// UPDATE`, `// DELETE`.
-- Mongoose methods allowed: create, find, findById, findOne, findByIdAndUpdate (with `{ new: true }`), findByIdAndDelete, deleteMany, updateMany, populate, save.
+- Mongoose methods allowed: create, find, findById, findOne, findByIdAndUpdate (with `{ new: true, runValidators: true }`), findByIdAndDelete, deleteMany, updateMany, populate, save.
 - Sequelize methods allowed: create, findAll, findByPk, update, destroy.
 - Status codes: 201 create, 200 read/update, 204 delete, 400 bad input/invalid id, 404 not found, 500 server error.
 - No helper abstractions, no classes, no extra middleware layers.
