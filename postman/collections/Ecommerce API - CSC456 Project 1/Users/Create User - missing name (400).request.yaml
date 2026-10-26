@@ -1,0 +1,20 @@
+$kind: http-request
+description: "Error case: name is required."
+url: "{{baseUrl}}/api/users"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "email": "noname@example.com"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 400", function () {
+          pm.response.to.have.status(400);
+      });
+    language: text/javascript
+order: 2000

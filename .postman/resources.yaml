@@ -1,0 +1,12 @@
+# Use this workspace to collaborate
+workspace:
+  id: 4eb9398e-80ef-4776-85f1-4c815a302116
+
+localResources:
+  collections: []
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/Ecommerce API - CSC456 Project 1: 4292bb44-0607-4ecc-a5f4-25ec477f419d

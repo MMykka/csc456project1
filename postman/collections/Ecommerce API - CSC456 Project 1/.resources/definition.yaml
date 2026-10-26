@@ -1,0 +1,9 @@
+$kind: collection
+description: Tests every route of the E-commerce Web API. Run the folders in order (Users, Products, Categories, Relationships, Orders, Feedback, Cleanup) so the saved ids are available.
+variables:
+  baseUrl: http://localhost:3000
+  userId: ""
+  orderId: ""
+  productId: ""
+  categoryId: ""
+  feedbackId: ""

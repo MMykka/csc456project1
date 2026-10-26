@@ -1,0 +1,25 @@
+$kind: http-request
+description: Create a new user.
+url: "{{baseUrl}}/api/users"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "michael abou khalil",
+      "email": "michael@example.com",
+      "age": 22
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 201", function () {
+          pm.response.to.have.status(201);
+      });
+      if (pm.response.code === 201) {
+          pm.collectionVariables.set("userId", pm.response.json()._id);
+      }
+    language: text/javascript
+order: 1000
